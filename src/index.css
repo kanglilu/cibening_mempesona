@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    background: #EEF6F3;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #17202A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Mandatory CSS Shell - Wajib Dipasang */
+.site-shell {
+  width: 100%;
+  min-width: 360px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(10, 26, 60, 0.05), 0 8px 10px -6px rgba(10, 26, 60, 0.05);
+}
+
+/* Focus styles for accessible input forms */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #0F4C81;
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
+}
+
+/* Custom fade indicator */
+.custom-scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+/* Avoid showing scrollbars during animation but keep scrolling active */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #C3E4D4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1F7A4D;
+}
+
+/* Endless marquee animation */
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+

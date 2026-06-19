@@ -1,0 +1,6 @@
+{
+  "name": "Landing Page Anton Suryana",
+  "description": "Landing Page Kampanye Anton Suryana, Calon Kepala Desa Cibening, Kec. Setu, Kab. Bekasi - Versi 2.0",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
