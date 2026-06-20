@@ -2,6 +2,12 @@
 @import "tailwindcss";
 
 @layer base {
+  :root,
+  html {
+    color-scheme: light;
+    background: #EEF6F3;
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -10,6 +16,23 @@
     color: #17202A;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  html,
+  body {
+    background: #EEF6F3;
+    color: #17202A;
+    color-scheme: light;
   }
 }
 
@@ -82,4 +105,3 @@ input:focus, select:focus, textarea:focus {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-
