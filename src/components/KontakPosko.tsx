@@ -1,15 +1,15 @@
-import { MessageSquareCode, MapPinned, Clock, Phone, ExternalLink } from "lucide-react";
+import { MapPinned, Clock, Instagram, ExternalLink } from "lucide-react";
 
 export default function KontakPosko() {
   const contactBlocks = [
     {
       id: 1,
-      label: "WhatsApp Tim Sukses",
-      value: "0812-3456-7890",
-      description: "Tanyakan info kampanye atau jadwalkan kehadiran",
-      icon: (className: string) => <Phone className={`${className} text-[#1F7A4D]`} />,
-      actionLabel: "Chat WhatsApp",
-      actionUrl: "https://wa.me/6281234567890?text=Halo%20Tim%20Pemenangan%20Anton%20Suryana%2C%20saya%20ingin%20bertanya%20mengenai%20jadwal%20sosialisasi."
+      label: "Instagram Anton",
+      value: "@anton.suryana",
+      description: "Kirim pesan langsung untuk informasi kampanye dan jadwal silaturahmi",
+      icon: (className: string) => <Instagram className={`${className} text-[#D9487D]`} />,
+      actionLabel: "DM Instagram",
+      actionUrl: "https://ig.me/m/anton.suryana"
     },
     {
       id: 2,
@@ -23,11 +23,11 @@ export default function KontakPosko() {
     {
       id: 3,
       label: "Jam Silaturahmi",
-      value: "Senin–Sabtu, 08.00–17.00 WIB",
+      value: "Senin-Sabtu, 08.00-17.00 WIB",
       description: "Pintu posko selalu terbuka untuk berdiskusi langsung",
       icon: (className: string) => <Clock className={`${className} text-[#1E88A8]`} />,
-      actionLabel: "Hubungi Penjaga",
-      actionUrl: "https://wa.me/6281234567890?text=Halo%20saya%20berencana%20hadir%20ke%20Posko%20Silahturahmi"
+      actionLabel: "DM untuk Jadwal",
+      actionUrl: "https://ig.me/m/anton.suryana"
     }
   ];
 

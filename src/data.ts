@@ -128,6 +128,24 @@ export const PROGRAM_KERJA: ProgramItem[] = [
     title: "Aspirasi Warga",
     description: "Kanal aspirasi online dan offline untuk menerima masukan masyarakat.",
     iconName: "MessageSquare"
+  },
+  {
+    id: 8,
+    title: "Balai Edukasi Centre",
+    description: "Sarana kegiatan pelatihan masyarakat untuk peningkatan kapasitas warga.",
+    iconName: "Users"
+  },
+  {
+    id: 9,
+    title: "SPBS",
+    description: "Stasiun pembuangan dan biogradasi sampah untuk tata kelola lingkungan yang lebih bersih.",
+    iconName: "Leaf"
+  },
+  {
+    id: 10,
+    title: "Fasilitas Olahraga Desa",
+    description: "Penataan lapangan sepak bola dan fasilitas olahraga desa sebagai ruang kegiatan warga.",
+    iconName: "Construction"
   }
 ];
 

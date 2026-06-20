@@ -9,8 +9,8 @@ export default function HeroSection() {
     },
     {
       id: "program",
-      title: "7 PROGRAM UNGGULAN",
-      desc: "Mulai dari digitalisasi pelayanan cepat, infrastruktur jalan, perbaikan drainase secara merata, hingga stimulus program UMKM lokal."
+      title: "10 PROGRAM UNGGULAN",
+      desc: "Mulai dari pelayanan cepat, infrastruktur, edukasi warga, pengelolaan sampah, olahraga desa, hingga penguatan UMKM lokal."
     },
     {
       id: "kontak-sosmed",
@@ -175,7 +175,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-1.5">
               <Heart className="w-4 h-4 text-rose-500 fill-rose-500 animate-pulse" />
               <span className="text-[10px] text-[#5B6470] font-bold uppercase tracking-wider">
-                PANITIA PEMENANGAN 2025
+                PANITIA PEMENANGAN 2026
               </span>
             </div>
           </div>

@@ -32,10 +32,10 @@ export default function FooterSection() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto space-y-10">
-        
+
         {/* Top footer row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          
+
           {/* Logo & Slogan info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
@@ -121,7 +121,7 @@ export default function FooterSection() {
                 </li>
                 <li>
                   <a href="#program" className="hover:text-white transition-colors flex items-center gap-1.5">
-                    &rsaquo; 7 Program Kerja
+                    &rsaquo; 10 Program Kerja
                   </a>
                 </li>
                 <li>
@@ -149,7 +149,7 @@ export default function FooterSection() {
         {/* Divider line */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/55">
           <p>
-            &copy; 2025 Kampanye Anton Suryana. Seluruh Hak Cipta Dilindungi Undang-Undang.
+            &copy; 2026 Kampanye Anton Suryana. Seluruh Hak Cipta Dilindungi Undang-Undang.
           </p>
 
           <button

@@ -28,28 +28,28 @@ export default function App() {
         {/* 2. Hero Section */}
         <HeroSection />
 
-        {/* 3. Slideshow Visi Section */}
+        {/* 3. Profil Singkat Section */}
+        <div className="px-4 md:px-8 py-10 md:py-14 border-b border-[#DDE5E1]/60">
+          <ProfilSingkat />
+        </div>
+
+        {/* 4. Slideshow Visi Section */}
         <div className="px-4 md:px-8 py-10 md:py-14 border-b border-[#DDE5E1]/60 bg-[#EAF7FB]/20">
           <VisiSlideshow />
         </div>
 
-        {/* 4. Misi (8 Poin) Section */}
+        {/* 5. Misi (8 Poin) Section */}
         <div className="px-4 md:px-8 py-10 md:py-14 border-b border-[#DDE5E1]/60">
           <MisiList />
         </div>
 
-        {/* 5. Program Kerja (7 Program) Section */}
+        {/* 6. Program Kerja (10 Program) Section */}
         <div className="px-4 md:px-8 py-10 md:py-14 border-b border-[#DDE5E1]/60 bg-[#EAF6F0]/20">
           <ProgramKerjaList />
         </div>
 
-        {/* 6. Infinite TikTok Gallery Slider */}
+        {/* 7. Infinite TikTok Gallery Slider */}
         <MarqueePhotos />
-
-        {/* 7. Profil Singkat Section (Pelayan Masyarakat Yang Handal & Terbuka) */}
-        <div className="px-4 md:px-8 py-10 md:py-14 border-b border-[#DDE5E1]/60">
-          <ProfilSingkat />
-        </div>
 
         {/* 8. Form Aspirasi Warga Section */}
         <div className="px-4 md:px-8 py-10 md:py-14 border-b border-[#DDE5E1]/60">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, HeartHandshake } from "lucide-react";
+import { HeartHandshake, Instagram } from "lucide-react";
 
 export default function StickyBottomCTA() {
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
@@ -56,7 +56,7 @@ export default function StickyBottomCTA() {
   // Hide if mobile keyboard is visible
   if (isKeyboardVisible) return null;
 
-  const handleWAUrl = "https://wa.me/628120000000?text=Halo%20Tim%20Pemenangan%20Anton%20Suryana%2C%20saya%20ingin%20bersilaturahmi%20dan%20mendukung%20nomor%2001.";
+  const instagramDmUrl = "https://ig.me/m/anton.suryana";
 
   const runOnce = (action: () => void) => {
     const now = Date.now();
@@ -66,8 +66,8 @@ export default function StickyBottomCTA() {
     action();
   };
 
-  const openWhatsApp = () => {
-    window.location.href = handleWAUrl;
+  const openInstagramDm = () => {
+    window.location.href = instagramDmUrl;
   };
 
   const scrollToAspirasi = () => {
@@ -88,20 +88,20 @@ export default function StickyBottomCTA() {
         boxShadow: "0 -4px 12px -2px rgba(10, 26, 60, 0.08)"
       }}
     >
-      {/* Kiri: tombol "WhatsApp" hijau #1F7A4D */}
+      {/* Kiri: tombol Instagram DM */}
       <button
         type="button"
-        onPointerUp={() => runOnce(openWhatsApp)}
-        onClick={() => runOnce(openWhatsApp)}
-        className="flex-1 bg-[#1F7A4D] hover:bg-[#165a38] text-white h-full px-3 text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-colors pointer-events-auto select-none"
+        onPointerUp={() => runOnce(openInstagramDm)}
+        onClick={() => runOnce(openInstagramDm)}
+        className="flex-1 bg-[#0F4C81] hover:bg-[#0b3b64] text-white border border-white h-full px-3 text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-colors pointer-events-auto select-none"
         style={{
           borderRadius: "8px",
           touchAction: "manipulation",
           WebkitTapHighlightColor: "transparent"
         }}
       >
-        <MessageCircle className="w-4 h-4 shrink-0" />
-        <span className="truncate">WhatsApp Tim</span>
+        <Instagram className="w-4 h-4 shrink-0" />
+        <span className="truncate">DM Instagram</span>
       </button>
 
       {/* Kanan: tombol "Aspirasi" biru #0F4C81 */}
@@ -109,7 +109,7 @@ export default function StickyBottomCTA() {
         type="button"
         onPointerUp={() => runOnce(scrollToAspirasi)}
         onClick={() => runOnce(scrollToAspirasi)}
-        className="flex-1 bg-[#0F4C81] hover:bg-[#0F4C81]/90 text-white h-full px-3 text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-colors pointer-events-auto select-none"
+        className="flex-1 bg-white hover:bg-[#EAF7FB] text-[#0F4C81] border border-[#0F4C81] h-full px-3 text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-colors pointer-events-auto select-none"
         style={{
           borderRadius: "8px",
           touchAction: "manipulation",

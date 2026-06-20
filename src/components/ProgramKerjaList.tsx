@@ -47,7 +47,7 @@ export default function ProgramKerjaList() {
           className="mx-auto mb-4 h-20 w-auto select-none md:h-24"
           draggable={false}
         />
-        <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">7 PROGRAM UNGGULAN</span>
+        <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">10 PROGRAM UNGGULAN</span>
         <h3 className="text-2xl md:text-3xl font-extrabold text-[#17202A] mt-1">
           Program Kerja Nyata untuk Cibening
         </h3>

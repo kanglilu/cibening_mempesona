@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, Menu, X, Landmark, ExternalLink } from "lucide-react";
+import { Instagram, Menu, X } from "lucide-react";
 
 export default function HeaderNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function HeaderNavbar() {
     { name: "Hubungi", href: "#kontak" }
   ];
 
-  const handleWAUrl = "https://wa.me/628120000000?text=Halo%20Tim%20Pemenangan%20Anton%20Suryana%2C%20saya%20ingin%20bersilaturahmi%20dan%20mendukung%20nomor%2001.";
+  const instagramDmUrl = "https://ig.me/m/anton.suryana";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full h-16 bg-white border-b border-[#DDE5E1] transition-all">
@@ -44,30 +44,30 @@ export default function HeaderNavbar() {
           ))}
         </nav>
 
-        {/* Right Side: WA Blue-Green CTA (Contact Us) */}
+        {/* Right Side: Instagram DM CTA */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href={handleWAUrl}
+            href={instagramDmUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#1F7A4D] hover:bg-[#165a38] text-white text-[13px] font-bold px-4 py-2 rounded-lg flex items-center gap-2 transition-all shadow-sm"
+            className="bg-[#0F4C81] hover:bg-[#0b3b64] text-white border border-white text-[13px] font-bold px-4 py-2 rounded-lg flex items-center gap-2 transition-colors shadow-sm"
           >
-            <MessageCircle className="w-4 h-4" />
-            <span>Hubungi Kami</span>
+            <Instagram className="w-4 h-4" />
+            <span>DM Instagram</span>
           </a>
         </div>
 
         {/* Mobile Hamburger menu toggle button */}
         <div className="flex items-center md:hidden gap-2">
-          {/* Direct WA Button in Mobile next to toggle for efficiency */}
+          {/* Direct Instagram DM Button in Mobile next to toggle for efficiency */}
           <a
-            href={handleWAUrl}
+            href={instagramDmUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#1F7A4D] text-white p-2 rounded-lg flex items-center justify-center"
-            title="Chat WhatsApp"
+            className="bg-[#0F4C81] text-white border border-white p-2 rounded-lg flex items-center justify-center"
+            title="DM Instagram"
           >
-            <MessageCircle className="w-4 h-4" />
+            <Instagram className="w-4 h-4" />
           </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -99,13 +99,13 @@ export default function HeaderNavbar() {
 
           <div className="pt-2 flex flex-col gap-2">
             <a
-              href={handleWAUrl}
+              href={instagramDmUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-[#1F7A4D] text-white text-center py-2.5 rounded-lg flex items-center justify-center gap-2 font-bold text-sm"
+              className="w-full bg-[#0F4C81] hover:bg-[#0b3b64] text-white border border-white text-center py-2.5 rounded-lg flex items-center justify-center gap-2 font-bold text-sm transition-colors"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Tim Kampanye WhatsApp</span>
+              <Instagram className="w-4 h-4" />
+              <span>DM Instagram Anton</span>
             </a>
             <div className="text-center text-[10px] text-[#5B6470] mt-1">
               Desa Cibening yang Maju, Bersih, dan Melayani
