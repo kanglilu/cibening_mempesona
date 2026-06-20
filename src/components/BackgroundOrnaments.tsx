@@ -18,6 +18,8 @@ export default function BackgroundOrnaments() {
           src={ornament.src}
           alt=""
           className={`absolute select-none opacity-15 ${ornament.className}`}
+          loading="lazy"
+          decoding="async"
           draggable={false}
         />
       ))}

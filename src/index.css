@@ -70,6 +70,27 @@ input:focus, select:focus, textarea:focus {
   }
 }
 
+@keyframes hero-portrait-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-portrait-fade-in {
+  animation: hero-portrait-fade-in 520ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait-fade-in {
+    animation: none;
+  }
+}
+
 /* Avoid showing scrollbars during animation but keep scrolling active */
 ::-webkit-scrollbar {
   width: 6px;

@@ -108,7 +108,9 @@ export default function HeroSection() {
               <img
                 src="/assets/content/images/Anton_potrait.webp"
                 alt="Anton Suryana"
-                className="h-full w-full object-cover object-[calc(50%+40px)_top] filter contrast-[1.03]"
+                className="hero-portrait-fade-in h-full w-full object-cover object-[calc(50%+40px)_top] filter contrast-[1.03]"
+                fetchPriority="high"
+                decoding="async"
                 style={{
                   maskImage:
                     "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.06) 8%, rgba(0,0,0,0.22) 18%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.78) 42%, black 54%, black 100%)",

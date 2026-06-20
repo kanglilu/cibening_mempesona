@@ -42,6 +42,8 @@ export default function VisiSlideshow() {
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
+            loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
           />
         ))}

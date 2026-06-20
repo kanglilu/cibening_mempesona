@@ -52,6 +52,8 @@ export default function ProfilSingkat() {
               className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ease-in-out filter contrast-105 ${
                 index === currentImage ? "opacity-100" : "opacity-0"
               }`}
+              loading="lazy"
+              decoding="async"
               referrerPolicy="no-referrer"
             />
           ))}

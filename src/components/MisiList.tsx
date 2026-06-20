@@ -8,12 +8,16 @@ export default function MisiList() {
           src="/assets/content/images/ornament_4.webp"
           alt=""
           className="absolute -right-24 top-0 w-72 rotate-[-12deg] opacity-15 select-none md:w-80"
+          loading="lazy"
+          decoding="async"
           draggable={false}
         />
         <img
           src="/assets/content/images/ornament_5.webp"
           alt=""
           className="absolute -left-24 bottom-[-2rem] w-80 rotate-[16deg] opacity-15 select-none md:w-96"
+          loading="lazy"
+          decoding="async"
           draggable={false}
         />
       </div>
@@ -23,6 +27,8 @@ export default function MisiList() {
           src="/assets/content/images/cibening_logo_blue.webp"
           alt="Logo Desa Cibening"
           className="mx-auto mb-4 h-20 w-auto select-none md:h-24"
+          loading="lazy"
+          decoding="async"
           draggable={false}
         />
         <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">8 MISI UTAMA</span>

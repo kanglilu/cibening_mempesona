@@ -2,15 +2,18 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "../src/index.css";
 
+const siteUrl = "https://antonsuryana.web.id";
+const ogImageUrl = `${siteUrl}/assets/content/images/Anton_potrait.webp`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   title: "Anton Suryana untuk Desa Cibening | Kec. Setu, Kab. Bekasi",
   description:
     "Website kampanye Anton Suryana calon Kepala Desa Cibening, Kecamatan Setu, Kabupaten Bekasi. Lihat profil, visi misi, program kerja, dan sampaikan aspirasi warga.",
   icons: {
-    icon: "/assets/content/images/cibening_logo.webp",
-    shortcut: "/assets/content/images/cibening_logo.webp",
-    apple: "/assets/content/images/cibening_logo.webp"
+    icon: "/assets/content/images/pavicon.webp",
+    shortcut: "/assets/content/images/pavicon.webp",
+    apple: "/assets/content/images/pavicon.webp"
   },
   openGraph: {
     title: "Anton Suryana untuk Desa Cibening",
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
       "Bersama membangun Desa Cibening yang maju, bersih, transparan, dan melayani.",
     images: [
       {
-        url: "/assets/content/images/Anton_potrait.webp",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: "Anton Suryana"
@@ -32,7 +35,7 @@ export const metadata: Metadata = {
     title: "Anton Suryana untuk Desa Cibening",
     description:
       "Bersama membangun Desa Cibening yang maju, bersih, transparan, dan melayani.",
-    images: ["/assets/content/images/Anton_potrait.webp"]
+    images: [ogImageUrl]
   }
 };
 

@@ -158,6 +158,7 @@ export default function MarqueePhotos() {
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 style={{ borderRadius: "10px" }}
                 loading="lazy"
+                decoding="async"
                 draggable={false}
               />
               <PlayCircle className="absolute left-1/2 top-1/2 z-10 w-10 h-10 -translate-x-1/2 -translate-y-1/2 text-white drop-shadow-md transition-transform group-hover:scale-110" />

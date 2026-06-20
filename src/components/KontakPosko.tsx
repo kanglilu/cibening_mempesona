@@ -38,12 +38,16 @@ export default function KontakPosko() {
           src="/assets/content/images/ornament_2.webp"
           alt=""
           className="absolute -right-24 top-0 w-72 rotate-[-16deg] opacity-15 select-none md:w-80"
+          loading="lazy"
+          decoding="async"
           draggable={false}
         />
         <img
           src="/assets/content/images/ornament_4.webp"
           alt=""
           className="absolute -left-24 bottom-[-3rem] w-80 rotate-[18deg] opacity-15 select-none md:w-96"
+          loading="lazy"
+          decoding="async"
           draggable={false}
         />
       </div>
