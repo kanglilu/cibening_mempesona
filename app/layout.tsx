@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/next";
 import "../src/index.css";
 
 const siteUrl = "https://antonsuryana.web.id";
@@ -53,7 +54,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" style={{ colorScheme: "light" }}>
-      <body className="bg-[#EEF6F3]">{children}</body>
+      <body className="bg-[#EEF6F3]">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
