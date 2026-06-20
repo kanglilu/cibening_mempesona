@@ -20,7 +20,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative bg-white pt-6 pb-0 px-4 md:px-8 border-b border-[#DDE5E1]/70 overflow-hidden">
+    <section id="home" className="relative bg-white pt-6 pb-0 px-4 md:px-8 border-b border-[#DDE5E1]/70 overflow-hidden">
       {/* 
         Hero Layout with unified Main Hero Unit:
         - Image behaves like an integrated container asset on the right (w-[42%])

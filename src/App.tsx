@@ -15,10 +15,12 @@ import KontakPosko from "./components/KontakPosko";
 import FooterSection from "./components/FooterSection";
 import StickyBottomCTA from "./components/StickyBottomCTA";
 import BackgroundOrnaments from "./components/BackgroundOrnaments";
+import ScrollToTopOnLoad from "./components/ScrollToTopOnLoad";
 
 export default function App() {
   return (
     <div className="site-shell relative flex flex-col min-h-screen pt-16">
+      <ScrollToTopOnLoad />
       <BackgroundOrnaments />
 
       <div className="relative flex flex-col min-h-screen">

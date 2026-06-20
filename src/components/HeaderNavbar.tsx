@@ -22,7 +22,7 @@ export default function HeaderNavbar() {
       <div className="flex items-center justify-between h-full px-4 md:px-6 max-w-7xl mx-auto">
         
         {/* Left Side: Village Logo */}
-        <a href="#profil" className="flex items-center gap-3 group">
+        <a href="#home" className="flex items-center gap-3 group">
           <img
             src="/assets/content/images/cibening_logo.webp"
             alt="Logo Desa Cibening"
