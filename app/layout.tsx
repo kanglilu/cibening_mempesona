@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Anton Suryana untuk Desa Cibening | Kec. Setu, Kab. Bekasi",
   description:
     "Website kampanye Anton Suryana calon Kepala Desa Cibening, Kecamatan Setu, Kabupaten Bekasi. Lihat profil, visi misi, program kerja, dan sampaikan aspirasi warga.",
+  icons: {
+    icon: "/assets/content/images/cibening_logo.webp",
+    shortcut: "/assets/content/images/cibening_logo.webp",
+    apple: "/assets/content/images/cibening_logo.webp"
+  },
   openGraph: {
     title: "Anton Suryana untuk Desa Cibening",
     description:
