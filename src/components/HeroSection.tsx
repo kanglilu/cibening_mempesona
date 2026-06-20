@@ -177,7 +177,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-1.5">
               <Heart className="w-4 h-4 text-rose-500 fill-rose-500 animate-pulse" />
               <span className="text-[10px] text-[#5B6470] font-bold uppercase tracking-wider">
-                PANITIA PEMENANGAN 2026
+                TIM PEMENANGAN ANTON SURYANA
               </span>
             </div>
           </div>
