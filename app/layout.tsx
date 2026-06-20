@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "../src/index.css";
 
 const siteUrl = "https://antonsuryana.web.id";
-const ogImageUrl = `${siteUrl}/assets/content/images/Anton_potrait.webp`;
+const ogImageUrl = `${siteUrl}/assets/content/images/OG.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: ogImageUrl,
-        width: 1200,
-        height: 630,
+        width: 944,
+        height: 496,
         alt: "Anton Suryana"
       }
     ],
