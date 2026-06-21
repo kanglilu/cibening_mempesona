@@ -23,7 +23,7 @@ export default function KontakPosko() {
     {
       id: 3,
       label: "Jam Silaturahmi",
-      value: "Senin-Sabtu, 08.00-17.00 WIB",
+      value: "Setiap Hari, 08.00 AM - 11.00 PM",
       description: "Pintu posko selalu terbuka untuk berdiskusi langsung",
       icon: (className: string) => <Clock className={`${className} text-[#1E88A8]`} />,
       actionLabel: "DM untuk Jadwal",
