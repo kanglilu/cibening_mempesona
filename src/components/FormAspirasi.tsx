@@ -10,7 +10,11 @@ export interface AspirasiFormData {
   whatsapp: string;
   kategori: string;
   isipikiran: string;
+  website?: string;
 }
+
+const SUBMIT_LOCK_KEY = "cibening_aspirasi_submitted_at";
+const SUBMIT_LOCK_DURATION = 24 * 60 * 60 * 1000;
 
 const CATEGORIES = [
   "Jalan",
@@ -25,9 +29,37 @@ const CATEGORIES = [
   "Lainnya"
 ];
 
+const AREAS = [
+  "Cikedokan",
+  "Telaga Asih",
+  "Rawa Belut",
+  "Cigebang",
+  "Tonggong Landak",
+  "Rawa atug Kiray",
+  "Perum Wisma Asri",
+  "Perum Cibening Indah",
+  "Rawa Atug Tegal Pentas",
+  "Cigebang Tonggong Londok",
+  "Cigebang Bonlap",
+  "Cigebang KUD",
+  "Setu Asri",
+  "Cikedokan Bungur",
+  "Cigebang Tegal Benteng",
+  "Cluster Tera Kirana",
+  "Cluster Adelia",
+  "Cluster Ganda Arum",
+  "Cluster Casa Five",
+  "Cluster Alodia Residence",
+  "Vila Asri Cibening",
+  "Cibening Residence",
+  "Cluster Amirta Residence",
+  "Cluster Bumi Samudra Setu"
+];
+
 export default function FormAspirasi() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error" | "limited">("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
   const [successData, setSuccessData] = useState<AspirasiFormData | null>(null);
 
   const {
@@ -41,15 +73,35 @@ export default function FormAspirasi() {
       rtRw: "",
       whatsapp: "",
       kategori: "",
-      isipikiran: ""
+      isipikiran: "",
+      website: ""
     }
   });
 
   const onSubmitForm = async (data: AspirasiFormData) => {
     setIsSubmitting(true);
     setSubmitStatus("idle");
+    setSubmitMessage("");
 
     try {
+      const previousSubmit = Number(window.localStorage.getItem(SUBMIT_LOCK_KEY) ?? 0);
+      const nextAllowedAt = previousSubmit + SUBMIT_LOCK_DURATION;
+
+      if (previousSubmit && Date.now() < nextAllowedAt) {
+        const hoursLeft = Math.max(1, Math.ceil((nextAllowedAt - Date.now()) / (60 * 60 * 1000)));
+        setSubmitStatus("limited");
+        setSubmitMessage(
+          `Agar setiap masukan dapat ditelaah dengan baik, pengiriman dari perangkat yang sama dapat dilakukan kembali dalam sekitar ${hoursLeft} jam.`
+        );
+        return;
+      }
+
+      if (data.website) {
+        setSubmitStatus("error");
+        setSubmitMessage("Aspirasi belum dapat diproses. Mohon muat ulang halaman lalu coba kembali.");
+        return;
+      }
+
       const payload = {
         ...data,
         submittedAt: new Date().toISOString(),
@@ -72,10 +124,12 @@ export default function FormAspirasi() {
 
       setSubmitStatus("success");
       setSuccessData(data);
+      window.localStorage.setItem(SUBMIT_LOCK_KEY, String(Date.now()));
       reset();
     } catch (err) {
       console.error("Gagal mengirim aspirasi ke Google Sheets.", err);
       setSubmitStatus("error");
+      setSubmitMessage("Mohon cek koneksi internet lalu coba kirim ulang.");
     } finally {
       setIsSubmitting(false);
     }
@@ -98,7 +152,7 @@ export default function FormAspirasi() {
             <div>
               <h4 className="font-bold text-[#1F7A4D] text-base">Aspirasi Terkirim Sukses!</h4>
               <p className="text-sm text-[#5B6470] mt-1">
-                Terima kasih, Bapak/Ibu <strong>{successData.nama}</strong> (RT/RW {successData.rtRw}). Aspirasi Anda mengenai <strong>kategori {successData.kategori}</strong> telah diteruskan ke tim sukses Anton Suryana untuk dicatat dan ditelaah.
+                Terima kasih, Bapak/Ibu <strong>{successData.nama}</strong> dari <strong>{successData.rtRw}</strong>. Aspirasi Anda mengenai <strong>kategori {successData.kategori}</strong> telah diteruskan ke tim sukses Anton Suryana untuk dicatat dan ditelaah.
               </p>
             </div>
           </div>
@@ -114,19 +168,42 @@ export default function FormAspirasi() {
         </div>
       )}
 
+      {submitStatus === "limited" && (
+        <div className="mb-6 p-4 bg-white text-[#17202A] rounded-lg border-l-4 border-[#0F4C81] animate-fadeIn flex items-start gap-3">
+          <CheckCircle2 className="w-5 h-5 text-[#0F4C81] shrink-0 mt-0.5" />
+          <div>
+            <h4 className="font-bold text-[#0F4C81] text-sm">Terima kasih, Anda sudah mengirim aspirasi sebelumnya</h4>
+            <p className="text-xs text-[#5B6470] mt-1">
+              {submitMessage}
+            </p>
+          </div>
+        </div>
+      )}
+
       {submitStatus === "error" && (
         <div className="mb-6 p-4 bg-white text-[#17202A] rounded-lg border-l-4 border-red-500 animate-fadeIn flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
           <div>
             <h4 className="font-bold text-red-600 text-sm">Aspirasi belum terkirim</h4>
             <p className="text-xs text-[#5B6470] mt-1">
-              Mohon cek koneksi internet lalu coba kirim ulang.
+              {submitMessage || "Mohon cek koneksi internet lalu coba kirim ulang."}
             </p>
           </div>
         </div>
       )}
 
       <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-4">
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            {...register("website")}
+          />
+        </div>
+
         {/* Name Input */}
         <div>
           <label className="block text-xs font-bold text-[#17202A] mb-1.5" htmlFor="nama">
@@ -137,9 +214,8 @@ export default function FormAspirasi() {
             type="text"
             placeholder="Contoh: Budi Santoso"
             style={{ minHeight: "48px" }}
-            className={`w-full px-4 rounded-lg border ${
-              errors.nama ? "border-red-500" : "border-[#DDE5E1]"
-            } bg-white text-[#17202A] transition-all`}
+            className={`w-full px-4 rounded-lg border ${errors.nama ? "border-red-500" : "border-[#DDE5E1]"
+              } bg-white text-[#17202A] transition-all`}
             {...register("nama", { required: "Nama lengkap wajib diisi" })}
           />
           {errors.nama && (
@@ -149,22 +225,26 @@ export default function FormAspirasi() {
           )}
         </div>
 
-        {/* RT/RW and Whatsapp in 2 columns */}
+        {/* Area and Whatsapp in 2 columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-xs font-bold text-[#17202A] mb-1.5" htmlFor="rtRw">
-              RT / RW <span className="text-red-500">*</span>
+              Wilayah / Kampung <span className="text-red-500">*</span>
             </label>
-            <input
+            <select
               id="rtRw"
-              type="text"
-              placeholder="Contoh: RT 03 / RW 04"
               style={{ minHeight: "48px" }}
-              className={`w-full px-4 rounded-lg border ${
-                errors.rtRw ? "border-red-500" : "border-[#DDE5E1]"
-              } bg-white text-[#17202A] transition-all`}
-              {...register("rtRw", { required: "RT/RW wajib diisi" })}
-            />
+              className={`w-full px-4 rounded-lg border ${errors.rtRw ? "border-red-500" : "border-[#DDE5E1]"
+                } bg-white text-[#17202A] transition-all`}
+              {...register("rtRw", { required: "Silakan pilih wilayah/kampung" })}
+            >
+              <option value="">-- Pilih Wilayah / Kampung --</option>
+              {AREAS.map((area) => (
+                <option key={area} value={area}>
+                  {area}
+                </option>
+              ))}
+            </select>
             {errors.rtRw && (
               <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
                 <AlertCircle className="w-3.5 h-3.5" /> {errors.rtRw.message}
@@ -181,9 +261,8 @@ export default function FormAspirasi() {
               type="tel"
               placeholder="Contoh: 08123456789"
               style={{ minHeight: "48px" }}
-              className={`w-full px-4 rounded-lg border ${
-                errors.whatsapp ? "border-red-500" : "border-[#DDE5E1]"
-              } bg-white text-[#17202A] transition-all`}
+              className={`w-full px-4 rounded-lg border ${errors.whatsapp ? "border-red-500" : "border-[#DDE5E1]"
+                } bg-white text-[#17202A] transition-all`}
               {...register("whatsapp", {
                 required: "Nomor WhatsApp wajib diisi",
                 pattern: {
@@ -208,9 +287,8 @@ export default function FormAspirasi() {
           <select
             id="kategori"
             style={{ minHeight: "48px" }}
-            className={`w-full px-4 rounded-lg border ${
-              errors.kategori ? "border-red-500" : "border-[#DDE5E1]"
-            } bg-white text-[#17202A] transition-all`}
+            className={`w-full px-4 rounded-lg border ${errors.kategori ? "border-red-500" : "border-[#DDE5E1]"
+              } bg-white text-[#17202A] transition-all`}
             {...register("kategori", { required: "Silakan pilih kategori aspirasi" })}
           >
             <option value="">-- Pilih Kategori Aspirasi --</option>
@@ -236,9 +314,8 @@ export default function FormAspirasi() {
             id="isipikiran"
             placeholder="Tuliskan aspirasi, keluhan, harapan, atau saran pembangunan untuk Desa Cibening di sini..."
             style={{ minHeight: "120px" }}
-            className={`w-full p-4 rounded-lg border ${
-              errors.isipikiran ? "border-red-500" : "border-[#DDE5E1]"
-            } bg-white text-[#17202A] transition-all`}
+            className={`w-full p-4 rounded-lg border ${errors.isipikiran ? "border-red-500" : "border-[#DDE5E1]"
+              } bg-white text-[#17202A] transition-all`}
             {...register("isipikiran", {
               required: "Aspirasi wajib diisi",
               minLength: {

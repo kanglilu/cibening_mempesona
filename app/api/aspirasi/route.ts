@@ -6,13 +6,24 @@ const GOOGLE_SHEETS_WEB_APP_URL =
 export async function POST(request: Request) {
   try {
     const payload = await request.json();
+    const { website, ...safePayload } = payload;
+
+    if (website) {
+      return NextResponse.json(
+        {
+          status: "error",
+          message: "Aspirasi tidak dapat diproses."
+        },
+        { status: 400 }
+      );
+    }
 
     const response = await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
       method: "POST",
       headers: {
         "Content-Type": "text/plain;charset=utf-8"
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(safePayload),
       cache: "no-store"
     });
 
