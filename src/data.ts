@@ -107,8 +107,8 @@ export const PROGRAM_KERJA: ProgramItem[] = [
   },
   {
     id: 4,
-    title: "UMKM Warga",
-    description: "Dukungan pelatihan, promosi, dan pengembangan usaha lokal.",
+    title: "BAGEUR (Bantuan Gerobak Usaha Rakyat)",
+    description: "Pengembangan usaha lokal warga Cibening serta bantuan gerobak usaha rakyat sebagai modal awal warga yang membutuhkan.",
     iconName: "Store"
   },
   {
