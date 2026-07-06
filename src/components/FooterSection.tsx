@@ -52,7 +52,7 @@ export default function FooterSection() {
                   Anton Suryana
                 </h4>
                 <p className="text-[10px] text-[#5DCAA5] font-bold uppercase tracking-widest mt-0.5">
-                  Calon Kepala Desa Cibening 01
+                  Calon Kepala Desa Cibening
                 </p>
               </div>
             </div>
