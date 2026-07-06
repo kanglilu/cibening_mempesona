@@ -146,6 +146,12 @@ export const PROGRAM_KERJA: ProgramItem[] = [
     title: "Fasilitas Olahraga Desa",
     description: "Penataan lapangan sepak bola dan fasilitas olahraga desa sebagai ruang kegiatan warga.",
     iconName: "Construction"
+  },
+  {
+    id: 11,
+    title: "LIBAS (Layanan Informasi Bantuan Sosial)",
+    description: "Melayani dengan informasi, membantu dengan kepedulian agar bansos tepat sasaran.",
+    iconName: "MessageSquare"
   }
 ];
 
