@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { BookOpenText, ChevronDown, ChevronUp } from "lucide-react";
 
 const PROFILE_IMAGES = [
+  "/assets/content/images/antonbanner.jpeg",
   "/assets/content/images/profilsingkat1.webp",
   "/assets/content/images/profilsingkat2.webp",
   "/assets/content/images/profilsingkat3.webp",
