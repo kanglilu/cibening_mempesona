@@ -16,9 +16,13 @@ export interface MisiItem {
   text: string;
 }
 
-export interface SlideItem {
+export interface VisiTaglineItem {
   id: number;
   text: string;
+}
+
+export interface VisiImageItem {
+  id: number;
   image: string;
   theme: string;
 }
@@ -30,24 +34,56 @@ export interface TestimonialItem {
   comment: string;
 }
 
-export const VISI_SLIDES: SlideItem[] = [
+export const VISI_TAGLINES: VisiTaglineItem[] = [
   {
     id: 1,
-    text: "Membangun desa melalui <span class='text-[#5DCAA5] font-extrabold'>pelayanan yang solutif</span> berlandaskan nasionalis dan agamis.",
+    text: "Membangun desa melalui <span class='text-[#5DCAA5] font-extrabold'>pelayanan yang solutif</span> berlandaskan nasionalis dan agamis."
+  },
+  {
+    id: 2,
+    text: "Tata kelola yang <span class='text-[#5DCAA5] font-extrabold'>terbuka dan akuntabel</span> untuk seluruh warga Cibening."
+  },
+  {
+    id: 3,
+    text: "Ekonomi desa yang <span class='text-[#5DCAA5] font-extrabold'>kuat dan mandiri</span> bagi setiap warga Cibening."
+  }
+];
+
+export const VISI_IMAGES: VisiImageItem[] = [
+  {
+    id: 1,
     image: "/assets/content/images/visislide2.webp",
     theme: "Suasana desa / alam"
   },
   {
     id: 2,
-    text: "Tata kelola yang <span class='text-[#5DCAA5] font-extrabold'>terbuka dan akuntabel</span> untuk seluruh warga Cibening.",
     image: "/assets/content/images/visislide1.webp",
     theme: "Balai desa / pelayanan"
   },
   {
     id: 3,
-    text: "Ekonomi desa yang <span class='text-[#5DCAA5] font-extrabold'>kuat dan mandiri</span> bagi setiap warga Cibening.",
     image: "/assets/content/images/visislide3.webp",
     theme: "Kebun / ekonomi lokal"
+  },
+  {
+    id: 4,
+    image: "/assets/content/images/visislide4.webp",
+    theme: "Kegiatan masyarakat"
+  },
+  {
+    id: 5,
+    image: "/assets/content/images/visislide5.webp",
+    theme: "Silaturahmi warga"
+  },
+  {
+    id: 6,
+    image: "/assets/content/images/visislide6.webp",
+    theme: "Pelayanan masyarakat"
+  },
+  {
+    id: 7,
+    image: "/assets/content/images/visislide7.webp",
+    theme: "Kebersamaan warga"
   }
 ];
 
@@ -89,69 +125,51 @@ export const MISI_LIST: MisiItem[] = [
 export const PROGRAM_KERJA: ProgramItem[] = [
   {
     id: 1,
-    title: "Pelayanan Desa Cepat",
-    description: "Administrasi warga lebih mudah, jelas, dan tidak berbelit.",
-    iconName: "Zap"
-  },
-  {
-    id: 2,
-    title: "Transparansi Desa",
-    description: "Informasi program dan kegiatan desa disampaikan secara terbuka.",
-    iconName: "Eye"
-  },
-  {
-    id: 3,
-    title: "Infrastruktur Merata",
-    description: "Perbaikan jalan, drainase, penerangan, dan fasilitas umum sesuai prioritas warga.",
-    iconName: "Construction"
-  },
-  {
-    id: 4,
     title: "BAGEUR (Bantuan Gerobak Usaha Rakyat)",
     description: "Pengembangan usaha lokal warga Cibening serta bantuan gerobak usaha rakyat sebagai modal awal warga yang membutuhkan.",
     iconName: "Store"
   },
   {
-    id: 5,
-    title: "Pemuda Produktif",
-    description: "Ruang kegiatan positif: olahraga, kreativitas, dan kewirausahaan.",
-    iconName: "Users"
-  },
-  {
-    id: 6,
-    title: "Lingkungan Bersih",
-    description: "Gotong royong, pengelolaan sampah, drainase, dan penghijauan.",
-    iconName: "Leaf"
-  },
-  {
-    id: 7,
+    id: 2,
     title: "Aspirasi Warga",
     description: "Kanal aspirasi online dan offline untuk menerima masukan masyarakat.",
     iconName: "MessageSquare"
   },
   {
-    id: 8,
+    id: 3,
     title: "Balai Edukasi Centre",
     description: "Sarana kegiatan pelatihan masyarakat untuk peningkatan kapasitas warga.",
     iconName: "Users"
   },
   {
-    id: 9,
+    id: 4,
     title: "SPBS",
     description: "Stasiun pembuangan dan biogradasi sampah untuk tata kelola lingkungan yang lebih bersih.",
     iconName: "Leaf"
   },
   {
-    id: 10,
+    id: 5,
     title: "Fasilitas Olahraga Desa",
     description: "Penataan lapangan sepak bola dan fasilitas olahraga desa sebagai ruang kegiatan warga.",
     iconName: "Construction"
   },
   {
-    id: 11,
+    id: 6,
     title: "LIBAS (Layanan Informasi Bantuan Sosial)",
     description: "Melayani dengan informasi, membantu dengan kepedulian agar bansos tepat sasaran.",
     iconName: "MessageSquare"
+  },
+  {
+    id: 7,
+    title: "BUMDes Maju Berkarya",
+    description: "Program penguatan kelembagaan dan pengembangan unit usaha BUMDes untuk mendorong pemberdayaan masyarakat serta meningkatkan Pendapatan Asli Desa (PADes).",
+    iconName: "Store"
+  },
+  {
+    id: 8,
+    title: "Siaga Sehat Desa",
+    description: "Jaringan relawan kesehatan desa yang bekerja sama dengan PKK, Posyandu, Puskesmas, dan lembaga terkait untuk memberikan edukasi, pendampingan, serta mempermudah akses pelayanan dan administrasi kesehatan bagi masyarakat.",
+    iconName: "HeartPulse"
   }
 ];
 

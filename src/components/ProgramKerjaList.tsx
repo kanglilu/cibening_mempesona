@@ -1,5 +1,5 @@
-import { PROGRAM_KERJA, ProgramItem } from "../data";
-import { Zap, Eye, Construction, Store, Users, Leaf, MessageSquare, HelpCircle } from "lucide-react";
+import { PROGRAM_KERJA } from "../data";
+import { Zap, Eye, Construction, Store, Users, Leaf, MessageSquare, HeartPulse, HelpCircle } from "lucide-react";
 
 export default function ProgramKerjaList() {
   const getIcon = (name: string, className = "w-6 h-6") => {
@@ -18,6 +18,8 @@ export default function ProgramKerjaList() {
         return <Leaf className={`${className} text-[#0F4C81]`} />;
       case "MessageSquare":
         return <MessageSquare className={`${className} text-[#1F7A4D]`} />;
+      case "HeartPulse":
+        return <HeartPulse className={`${className} text-[#0F4C81]`} />;
       default:
         return <HelpCircle className={`${className} text-[#5B6470]`} />;
     }
@@ -53,7 +55,7 @@ export default function ProgramKerjaList() {
           decoding="async"
           draggable={false}
         />
-        <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">11 PROGRAM UNGGULAN</span>
+        <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">8 PROGRAM UNGGULAN</span>
         <h3 className="text-2xl md:text-3xl font-extrabold text-[#17202A] mt-1">
           Program Kerja Nyata untuk Cibening
         </h3>
@@ -62,40 +64,35 @@ export default function ProgramKerjaList() {
         </p>
       </div>
 
-      {/* Grid: 2 kolom di mobile, 3 kolom di desktop */}
-      <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5">
+      <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         {PROGRAM_KERJA.map((prog, index) => {
-          // Alternative top border colors (Alternating hijau/biru)
-          // index % 2 === 0: Hijau (#1F7A4D), index % 2 === 1: Biru (#0F4C81)
           const isGreen = index % 2 === 0;
-          const borderColor = isGreen ? "#1F7A4D" : "#0F4C81";
-          const bgColor = isGreen ? "bg-[#EAF6F0]/40 hover:bg-[#EAF6F0]/80" : "bg-[#EAF7FB]/40 hover:bg-[#EAF7FB]/80";
+          const accentClass = isGreen ? "bg-[#1F7A4D]" : "bg-[#0F4C81]";
+          const iconWrapClass = isGreen
+            ? "border-[#BFE0CF] bg-[#F4FBF7]"
+            : "border-[#BDD7EA] bg-[#F5FAFD]";
+          const numberClass = isGreen ? "text-[#1F7A4D]" : "text-[#0F4C81]";
 
           return (
             <div
               key={prog.id}
-              className={`flex flex-col p-3 sm:p-5 border border-[#DDE5E1] transition-all shadow-sm group ${bgColor}`}
-              style={{
-                borderTopWidth: "3.5px",
-                borderTopColor: borderColor,
-                borderRadius: "0 0 10px 10px"
-              }}
+              className="group relative min-h-[172px] overflow-hidden rounded-lg border border-[#D7E8DD] bg-[#F1FAF6] p-3.5 shadow-[0_1px_0_rgba(23,32,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#B9D7C5] hover:bg-[#ECF8F2] hover:shadow-[0_14px_34px_rgba(31,122,77,0.10)] sm:min-h-[196px] sm:p-5"
             >
-              {/* Badge Number and Icon layout */}
-              <div className="flex items-center justify-between mb-2 sm:mb-4">
-                <div className="p-1.5 sm:p-2.5 bg-white rounded-lg border border-[#DDE5E1] shadow-inner">
-                  {getIcon(prog.iconName, "w-4.5 h-4.5 sm:w-6 sm:h-6")}
+              <div className={`absolute inset-x-0 top-0 h-1 ${accentClass}`} />
+
+              <div className="mb-3 flex items-start justify-between gap-2 sm:mb-4">
+                <div className={`flex h-9 w-9 items-center justify-center rounded-md border ${iconWrapClass} transition-transform duration-300 group-hover:scale-105 sm:h-10 sm:w-10`}>
+                  {getIcon(prog.iconName, "w-4.5 h-4.5 sm:w-5 sm:h-5")}
                 </div>
-                <span className="text-[10px] sm:text-xs font-mono font-bold text-[#5B6470]">
+                <span className={`mt-1 font-mono text-[10px] font-bold sm:text-xs ${numberClass}`}>
                   #{prog.id.toString().padStart(2, "0")}
                 </span>
               </div>
 
-              {/* Program title & details */}
-              <h4 className="text-xs sm:text-[16px] font-bold text-[#17202A] leading-tight mb-1.5 sm:mb-2 group-hover:text-[#0F4C81] transition-colors">
+              <h4 className="mb-2 text-[13px] font-extrabold leading-snug text-[#17202A] transition-colors group-hover:text-[#0F4C81] sm:text-base">
                 {prog.title}
               </h4>
-              <p className="text-[#5B6470] text-[10px] sm:text-sm leading-relaxed flex-grow">
+              <p className="text-[10.5px] leading-relaxed text-[#53606A] sm:text-[13px]">
                 {prog.description}
               </p>
             </div>

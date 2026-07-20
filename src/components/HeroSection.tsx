@@ -50,7 +50,7 @@ export default function HeroSection() {
               </h1>
 
               <h2 className="text-[#0F4C81] text-[11px] sm:text-sm md:text-base font-bold leading-snug max-w-[170px] min-[400px]:max-w-[190px] sm:max-w-sm">
-                Menuju Era Baru Cibening yang Maju, Bersih, dan Melayani.
+                Membangun desa melalui pelayanan yang solutif berlandaskan nasionalis dan agamis.
               </h2>
             </div>
 
