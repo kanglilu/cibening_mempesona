@@ -52,36 +52,26 @@ export const VISI_TAGLINES: VisiTaglineItem[] = [
 export const VISI_IMAGES: VisiImageItem[] = [
   {
     id: 1,
-    image: "/assets/content/images/visislide2.webp",
-    theme: "Suasana desa / alam"
-  },
-  {
-    id: 2,
-    image: "/assets/content/images/visislide1.webp",
-    theme: "Balai desa / pelayanan"
-  },
-  {
-    id: 3,
     image: "/assets/content/images/visislide3.webp",
     theme: "Kebun / ekonomi lokal"
   },
   {
-    id: 4,
+    id: 2,
     image: "/assets/content/images/visislide4.webp",
     theme: "Kegiatan masyarakat"
   },
   {
-    id: 5,
+    id: 3,
     image: "/assets/content/images/visislide5.webp",
     theme: "Silaturahmi warga"
   },
   {
-    id: 6,
+    id: 4,
     image: "/assets/content/images/visislide6.webp",
     theme: "Pelayanan masyarakat"
   },
   {
-    id: 7,
+    id: 5,
     image: "/assets/content/images/visislide7.webp",
     theme: "Kebersamaan warga"
   }
