@@ -1,29 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import { PROGRAM_KERJA } from "../data";
-import { Zap, Eye, Construction, Store, Users, Leaf, MessageSquare, HeartPulse, HelpCircle } from "lucide-react";
+import { ExternalLink, PlayCircle, X } from "lucide-react";
 
 export default function ProgramKerjaList() {
-  const getIcon = (name: string, className = "w-6 h-6") => {
-    switch (name) {
-      case "Zap":
-        return <Zap className={`${className} text-[#1F7A4D]`} />;
-      case "Eye":
-        return <Eye className={`${className} text-[#0F4C81]`} />;
-      case "Construction":
-        return <Construction className={`${className} text-[#1F7A4D]`} />;
-      case "Store":
-        return <Store className={`${className} text-[#0F4C81]`} />;
-      case "Users":
-        return <Users className={`${className} text-[#1F7A4D]`} />;
-      case "Leaf":
-        return <Leaf className={`${className} text-[#0F4C81]`} />;
-      case "MessageSquare":
-        return <MessageSquare className={`${className} text-[#1F7A4D]`} />;
-      case "HeartPulse":
-        return <HeartPulse className={`${className} text-[#0F4C81]`} />;
-      default:
-        return <HelpCircle className={`${className} text-[#5B6470]`} />;
-    }
-  };
+  const [activeProgram, setActiveProgram] = useState<(typeof PROGRAM_KERJA)[number] | null>(null);
 
   return (
     <div id="program" className="relative overflow-hidden space-y-6">
@@ -64,41 +46,85 @@ export default function ProgramKerjaList() {
         </p>
       </div>
 
-      <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {PROGRAM_KERJA.map((prog, index) => {
           const isGreen = index % 2 === 0;
           const accentClass = isGreen ? "bg-[#1F7A4D]" : "bg-[#0F4C81]";
-          const iconWrapClass = isGreen
-            ? "border-[#BFE0CF] bg-[#F4FBF7]"
-            : "border-[#BDD7EA] bg-[#F5FAFD]";
-          const numberClass = isGreen ? "text-[#1F7A4D]" : "text-[#0F4C81]";
 
           return (
-            <div
+            <button
               key={prog.id}
-              className="group relative min-h-[172px] overflow-hidden rounded-lg border border-[#D7E8DD] bg-[#F1FAF6] p-3.5 shadow-[0_1px_0_rgba(23,32,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#B9D7C5] hover:bg-[#ECF8F2] hover:shadow-[0_14px_34px_rgba(31,122,77,0.10)] sm:min-h-[196px] sm:p-5"
+              type="button"
+              onClick={() => setActiveProgram(prog)}
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#D6E5DC] bg-white p-2.5 text-left shadow-[0_14px_38px_rgba(23,32,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[#B9D7C5] hover:shadow-[0_18px_46px_rgba(15,76,129,0.13)]"
             >
-              <div className={`absolute inset-x-0 top-0 h-1 ${accentClass}`} />
-
-              <div className="mb-3 flex items-start justify-between gap-2 sm:mb-4">
-                <div className={`flex h-9 w-9 items-center justify-center rounded-md border ${iconWrapClass} transition-transform duration-300 group-hover:scale-105 sm:h-10 sm:w-10`}>
-                  {getIcon(prog.iconName, "w-4.5 h-4.5 sm:w-5 sm:h-5")}
-                </div>
-                <span className={`mt-1 font-mono text-[10px] font-bold sm:text-xs ${numberClass}`}>
-                  #{prog.id.toString().padStart(2, "0")}
-                </span>
+              <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-xl bg-[#EAF6F0]">
+                <img
+                  src={prog.thumbnail}
+                  alt={prog.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
+                <PlayCircle className="absolute left-1/2 top-1/2 h-11 w-11 -translate-x-1/2 -translate-y-1/2 text-white opacity-90 drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] transition-transform group-hover:scale-110" />
               </div>
 
-              <h4 className="mb-2 text-[13px] font-extrabold leading-snug text-[#17202A] transition-colors group-hover:text-[#0F4C81] sm:text-base">
-                {prog.title}
-              </h4>
-              <p className="text-[10.5px] leading-relaxed text-[#53606A] sm:text-[13px]">
-                {prog.description}
-              </p>
-            </div>
+              <div className="flex flex-1 flex-col px-2 pb-3 pt-4 sm:px-3">
+                <div className={`mb-2 h-1 w-10 rounded-full ${accentClass}`} />
+                <h4 className="text-base font-extrabold leading-snug text-[#17202A] transition-colors group-hover:text-[#0F4C81] sm:text-lg">
+                  {prog.title}
+                </h4>
+                <p className="mt-2 text-sm leading-relaxed text-[#53606A]">
+                  {prog.description}
+                </p>
+              </div>
+            </button>
           );
         })}
       </div>
+
+      {activeProgram && (
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#0a1a3a]/80 px-4 py-6 backdrop-blur-sm">
+          <div className="relative w-full max-w-3xl overflow-hidden rounded-xl border border-white/20 bg-white shadow-2xl">
+            <div className="flex items-center justify-between gap-3 border-b border-[#DDE5E1] px-4 py-3">
+              <div className="min-w-0">
+                <h4 className="truncate text-sm font-extrabold text-[#17202A]">{activeProgram.title}</h4>
+                <p className="truncate text-xs text-[#5B6470]">{activeProgram.description}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveProgram(null)}
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#DDE5E1] text-[#17202A] hover:bg-[#EAF6F0]"
+                aria-label="Tutup video"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            <div className="aspect-video bg-black">
+              <iframe
+                key={activeProgram.youtubeId}
+                src={`https://www.youtube.com/embed/${activeProgram.youtubeId}?autoplay=1&rel=0`}
+                title={activeProgram.title}
+                className="h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+
+            <a
+              href={activeProgram.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 py-3 text-xs font-bold text-[#0F4C81] hover:bg-[#EAF7FB]"
+            >
+              <span>Buka di YouTube</span>
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -9,6 +9,9 @@ export interface ProgramItem {
   title: string;
   description: string;
   iconName: string;
+  thumbnail: string;
+  youtubeId: string;
+  youtubeUrl: string;
 }
 
 export interface MisiItem {
@@ -117,49 +120,73 @@ export const PROGRAM_KERJA: ProgramItem[] = [
     id: 1,
     title: "BAGEUR (Bantuan Gerobak Usaha Rakyat)",
     description: "Pengembangan usaha lokal warga Cibening serta bantuan gerobak usaha rakyat sebagai modal awal warga yang membutuhkan.",
-    iconName: "Store"
+    iconName: "Store",
+    thumbnail: "https://img.youtube.com/vi/wUaGUu_F5M0/hqdefault.jpg",
+    youtubeId: "wUaGUu_F5M0",
+    youtubeUrl: "https://youtu.be/wUaGUu_F5M0?si=zLFsUNM28K4t5Jt6"
   },
   {
     id: 2,
     title: "Aspirasi Warga",
     description: "Kanal aspirasi online dan offline untuk menerima masukan masyarakat.",
-    iconName: "MessageSquare"
+    iconName: "MessageSquare",
+    thumbnail: "https://img.youtube.com/vi/DMOh7VU8zhM/hqdefault.jpg",
+    youtubeId: "DMOh7VU8zhM",
+    youtubeUrl: "https://youtu.be/DMOh7VU8zhM?si=XTg-9yMko7ZzAv4R"
   },
   {
     id: 3,
     title: "Balai Edukasi Centre",
     description: "Sarana kegiatan pelatihan masyarakat untuk peningkatan kapasitas warga.",
-    iconName: "Users"
+    iconName: "Users",
+    thumbnail: "https://img.youtube.com/vi/a9To0OwJRYM/hqdefault.jpg",
+    youtubeId: "a9To0OwJRYM",
+    youtubeUrl: "https://youtu.be/a9To0OwJRYM?si=86araxo1Q1CxAQ-b"
   },
   {
     id: 4,
     title: "SPBS",
     description: "Stasiun pembuangan dan biogradasi sampah untuk tata kelola lingkungan yang lebih bersih.",
-    iconName: "Leaf"
+    iconName: "Leaf",
+    thumbnail: "https://img.youtube.com/vi/JYONsF4zpZ4/hqdefault.jpg",
+    youtubeId: "JYONsF4zpZ4",
+    youtubeUrl: "https://youtu.be/JYONsF4zpZ4?si=49BjppEsuILVIpOb"
   },
   {
     id: 5,
     title: "Fasilitas Olahraga Desa",
     description: "Penataan lapangan sepak bola dan fasilitas olahraga desa sebagai ruang kegiatan warga.",
-    iconName: "Construction"
+    iconName: "Construction",
+    thumbnail: "https://img.youtube.com/vi/xAA7US6MrBA/hqdefault.jpg",
+    youtubeId: "xAA7US6MrBA",
+    youtubeUrl: "https://youtu.be/xAA7US6MrBA?si=CGJnfkdpQtKKpELX"
   },
   {
     id: 6,
     title: "LIBAS (Layanan Informasi Bantuan Sosial)",
     description: "Melayani dengan informasi, membantu dengan kepedulian agar bansos tepat sasaran.",
-    iconName: "MessageSquare"
+    iconName: "MessageSquare",
+    thumbnail: "https://img.youtube.com/vi/Gox9O9XDMy4/hqdefault.jpg",
+    youtubeId: "Gox9O9XDMy4",
+    youtubeUrl: "https://youtu.be/Gox9O9XDMy4?si=qwrKxu0mp35HUjgf"
   },
   {
     id: 7,
     title: "BUMDes Maju Berkarya",
     description: "Program penguatan kelembagaan dan pengembangan unit usaha BUMDes untuk mendorong pemberdayaan masyarakat serta meningkatkan Pendapatan Asli Desa (PADes).",
-    iconName: "Store"
+    iconName: "Store",
+    thumbnail: "https://img.youtube.com/vi/fJ8Yt_kyUoo/hqdefault.jpg",
+    youtubeId: "fJ8Yt_kyUoo",
+    youtubeUrl: "https://youtu.be/fJ8Yt_kyUoo?si=rdXoA8WMMTtAnC-w"
   },
   {
     id: 8,
     title: "Siaga Sehat Desa",
     description: "Jaringan relawan kesehatan desa yang bekerja sama dengan PKK, Posyandu, Puskesmas, dan lembaga terkait untuk memberikan edukasi, pendampingan, serta mempermudah akses pelayanan dan administrasi kesehatan bagi masyarakat.",
-    iconName: "HeartPulse"
+    iconName: "HeartPulse",
+    thumbnail: "https://img.youtube.com/vi/0_tNGrijffU/hqdefault.jpg",
+    youtubeId: "0_tNGrijffU",
+    youtubeUrl: "https://youtu.be/0_tNGrijffU?si=gEH-nTgvWrgcSClx"
   }
 ];
 

@@ -1,10 +1,23 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Inter, Inter_Tight } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "../src/index.css";
 
 const siteUrl = "https://antonsuryana.web.id";
 const ogImageUrl = `${siteUrl}/assets/content/images/OG.png`;
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap"
+});
+
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -53,8 +66,8 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="id" style={{ colorScheme: "light" }}>
-      <body className="bg-[#EEF6F3]">
+    <html lang="id" style={{ colorScheme: "light" }} suppressHydrationWarning>
+      <body className={`${inter.variable} ${interTight.variable} bg-[#EEF6F3]`}>
         {children}
         <Analytics />
       </body>
