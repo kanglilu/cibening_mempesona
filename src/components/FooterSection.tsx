@@ -52,7 +52,7 @@ export default function FooterSection() {
                   Anton Suryana
                 </h4>
                 <p className="text-[10px] text-[#5DCAA5] font-bold uppercase tracking-widest mt-0.5">
-                  Calon Kepala Desa Cibening
+                  Calon Kepala Desa Cibening &bull; No. 2
                 </p>
               </div>
             </div>
@@ -62,6 +62,9 @@ export default function FooterSection() {
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-2">
+              <span className="bg-white/10 text-[#5DCAA5] px-2.5 py-1 rounded text-xs font-bold font-mono">
+                No. 2
+              </span>
               <span className="bg-white/10 text-[#5DCAA5] px-2.5 py-1 rounded text-xs font-bold font-mono">
                 #cibeningmempesona
               </span>
@@ -121,7 +124,7 @@ export default function FooterSection() {
                 </li>
                 <li>
                   <a href="#program" className="hover:text-white transition-colors flex items-center gap-1.5">
-                    &rsaquo; 10 Program Kerja
+                    &rsaquo; 8 Program Kerja
                   </a>
                 </li>
                 <li>

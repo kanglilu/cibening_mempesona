@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { PROGRAM_KERJA } from "../data";
 import { ExternalLink, PlayCircle, X } from "lucide-react";
+import BrandLockup from "./BrandLockup";
 
 export default function ProgramKerjaList() {
   const [activeProgram, setActiveProgram] = useState<(typeof PROGRAM_KERJA)[number] | null>(null);
@@ -29,14 +30,7 @@ export default function ProgramKerjaList() {
       </div>
 
       <div className="relative z-10 text-center md:text-left">
-        <img
-          src="/assets/content/images/cibening_logo_blue.webp"
-          alt="Logo Desa Cibening"
-          className="mx-auto mb-4 h-20 w-auto select-none md:h-24"
-          loading="lazy"
-          decoding="async"
-          draggable={false}
-        />
+        <BrandLockup />
         <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">8 PROGRAM UNGGULAN</span>
         <h3 className="text-2xl md:text-3xl font-extrabold text-[#17202A] mt-1">
           Program Kerja Nyata untuk Cibening

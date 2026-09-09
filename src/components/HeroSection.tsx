@@ -9,8 +9,8 @@ export default function HeroSection() {
     },
     {
       id: "program",
-      title: "10 PROGRAM UNGGULAN",
-      desc: "Mulai dari pelayanan cepat, infrastruktur, edukasi warga, pengelolaan sampah, olahraga desa, hingga penguatan UMKM lokal."
+      title: "8 PROGRAM UNGGULAN",
+      desc: "Mulai dari BAGEUR, LIBAS, penguatan BUMDes, edukasi warga, pengelolaan sampah, olahraga desa, hingga layanan kesehatan."
     },
     {
       id: "kontak-sosmed",
@@ -41,7 +41,7 @@ export default function HeroSection() {
 
             <div className="space-y-1.5">
               <span className="font-extrabold uppercase tracking-widest text-[#0F4C81] select-none block text-[8px] leading-[15.5px] sm:text-[11px] h-auto">
-                Calon Kepala Desa Cibening
+                Calon Kepala Desa Cibening &bull; No. 2
               </span>
 
               {/* Responsive main headline: avoids text-wrapping on short mobile width */}
@@ -121,6 +121,15 @@ export default function HeroSection() {
               />
             </div>
           </div>
+
+          <img
+            src="/assets/content/images/2.webp"
+            alt="Jangan lupa coblos nomor 2"
+            className="pointer-events-none absolute bottom-[76px] right-[12px] z-20 w-[180px] select-none sm:bottom-[86px] sm:right-[16px] sm:w-[168px] md:bottom-[102px] md:right-[24px] md:w-[196px]"
+            loading="eager"
+            decoding="async"
+            draggable={false}
+          />
 
         </div>
 

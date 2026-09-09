@@ -1,21 +1,14 @@
 import { MISI_LIST } from "../data";
+import BrandLockup from "./BrandLockup";
 
 export default function MisiList() {
   return (
     <div id="misi" className="relative overflow-hidden space-y-6">
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <img
-          src="/assets/content/images/ornament_4.webp"
+          src="/assets/content/images/2.webp"
           alt=""
-          className="absolute -right-24 top-0 w-72 rotate-[-12deg] opacity-15 select-none md:w-80"
-          loading="lazy"
-          decoding="async"
-          draggable={false}
-        />
-        <img
-          src="/assets/content/images/ornament_5.webp"
-          alt=""
-          className="absolute -left-24 bottom-[-2rem] w-80 rotate-[16deg] opacity-15 select-none md:w-96"
+          className="absolute -right-28 top-10 w-[360px] opacity-10 select-none sm:-right-20 sm:top-4 sm:w-[430px] md:w-[520px]"
           loading="lazy"
           decoding="async"
           draggable={false}
@@ -23,14 +16,7 @@ export default function MisiList() {
       </div>
 
       <div className="relative z-10 text-center md:text-left">
-        <img
-          src="/assets/content/images/cibening_logo_blue.webp"
-          alt="Logo Desa Cibening"
-          className="mx-auto mb-4 h-20 w-auto select-none md:h-24"
-          loading="lazy"
-          decoding="async"
-          draggable={false}
-        />
+        <BrandLockup />
         <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">8 MISI UTAMA</span>
         <h3 className="text-2xl md:text-3xl font-extrabold text-[#17202A] mt-1">Langkah Nyata Membangun Desa</h3>
         <p className="text-[#5B6470] mt-2 max-w-2xl text-sm md:text-base">

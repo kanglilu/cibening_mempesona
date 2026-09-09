@@ -45,7 +45,7 @@ export default function App() {
           <MisiList />
         </div>
 
-        {/* 6. Program Kerja (10 Program) Section */}
+        {/* 6. Program Kerja (8 Program) Section */}
         <div className="px-4 md:px-8 py-10 md:py-14 border-b border-[#DDE5E1]/60 bg-[#EAF6F0]/20">
           <ProgramKerjaList />
         </div>

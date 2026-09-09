@@ -21,16 +21,16 @@ const interTight = Inter_Tight({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Anton Suryana untuk Desa Cibening | Kec. Setu, Kab. Bekasi",
+  title: "Anton Suryana No. 2 untuk Desa Cibening | Kec. Setu, Kab. Bekasi",
   description:
-    "Website kampanye Anton Suryana calon Kepala Desa Cibening, Kecamatan Setu, Kabupaten Bekasi. Lihat profil, visi misi, program kerja, dan sampaikan aspirasi warga.",
+    "Website kampanye Anton Suryana No. 2 calon Kepala Desa Cibening, Kecamatan Setu, Kabupaten Bekasi. Lihat profil, visi misi, program kerja, dan sampaikan aspirasi warga.",
   icons: {
     icon: "/assets/content/images/pavicon.webp",
     shortcut: "/assets/content/images/pavicon.webp",
     apple: "/assets/content/images/pavicon.webp"
   },
   openGraph: {
-    title: "Anton Suryana untuk Desa Cibening",
+    title: "Anton Suryana No. 2 untuk Desa Cibening",
     description:
       "Bersama membangun Desa Cibening yang maju, bersih, transparan, dan melayani.",
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anton Suryana untuk Desa Cibening",
+    title: "Anton Suryana No. 2 untuk Desa Cibening",
     description:
       "Bersama membangun Desa Cibening yang maju, bersih, transparan, dan melayani.",
     images: [ogImageUrl]

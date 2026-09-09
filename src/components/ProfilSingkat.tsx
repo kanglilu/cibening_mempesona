@@ -7,7 +7,8 @@ const PROFILE_IMAGES = [
   "/assets/content/images/antonbanner.jpeg",
   "/assets/content/images/profilsingkat1.webp",
   "/assets/content/images/profilsingkat2.webp",
-  "/assets/content/images/profilsingkat3.webp",
+  "/assets/content/images/profsingkat.jpeg",
+  "/assets/content/images/profsingkat2.jpeg",
   "/assets/content/images/profilsingkat4.webp",
   "/assets/content/images/profilsingkat5.webp"
 ];
@@ -65,7 +66,7 @@ export default function ProfilSingkat() {
         {/* Floating title */}
         <div className="absolute left-5 right-4 bottom-5 text-left">
           <h4 className="text-lg font-bold text-white drop-shadow-md">Anton Suryana</h4>
-          <p className="text-xs text-white/90 font-medium mt-0.5 drop-shadow-md">Calon Kepala Desa Cibening, Kec. Setu</p>
+          <p className="text-xs text-white/90 font-medium mt-0.5 drop-shadow-md">No. 2 &bull; Calon Kepala Desa Cibening, Kec. Setu</p>
         </div>
       </div>
 

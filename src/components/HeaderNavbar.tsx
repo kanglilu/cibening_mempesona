@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Instagram, Menu, X } from "lucide-react";
+import BrandLockup from "./BrandLockup";
 
 export default function HeaderNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,12 +24,7 @@ export default function HeaderNavbar() {
         
         {/* Left Side: Village Logo */}
         <a href="#home" className="flex items-center gap-3 group">
-          <img
-            src="/assets/content/images/cibening_logo.webp"
-            alt="Logo Desa Cibening"
-            className="h-9 w-auto object-contain"
-            draggable={false}
-          />
+          <BrandLockup variant="header" showNumber={false} />
         </a>
 
         {/* Center: Desktop Nav Links (hidden < 768px) */}
@@ -98,6 +94,9 @@ export default function HeaderNavbar() {
           </div>
 
           <div className="pt-2 flex flex-col gap-2">
+            <div className="rounded-lg border border-[#1F7A4D]/25 bg-[#EAF6F0] px-3 py-2 text-center text-xs font-extrabold uppercase tracking-wide text-[#1F7A4D]">
+              No. 2
+            </div>
             <a
               href={instagramDmUrl}
               target="_blank"
