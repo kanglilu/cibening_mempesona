@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowUp, Facebook, Instagram, MapPin } from "lucide-react";
 
 export default function FooterSection() {
@@ -52,7 +53,7 @@ export default function FooterSection() {
                   Anton Suryana
                 </h4>
                 <p className="text-[10px] text-[#5DCAA5] font-bold uppercase tracking-widest mt-0.5">
-                  Calon Kepala Desa Cibening &bull; No. 2
+                  Kepala Desa Cibening &bull; Kec. Setu
                 </p>
               </div>
             </div>
@@ -62,9 +63,6 @@ export default function FooterSection() {
             </p>
 
             <div className="flex flex-wrap items-center gap-2 pt-2">
-              <span className="bg-white/10 text-[#5DCAA5] px-2.5 py-1 rounded text-xs font-bold font-mono">
-                No. 2
-              </span>
               <span className="bg-white/10 text-[#5DCAA5] px-2.5 py-1 rounded text-xs font-bold font-mono">
                 #cibeningmempesona
               </span>
@@ -106,30 +104,35 @@ export default function FooterSection() {
             </div>
           </div>
 
-          {/* Combined Quick Nav + Posko columns side-by-side on mobile, standard layout on desktop */}
+          {/* Combined Quick Nav + Alamat columns side-by-side on mobile, standard layout on desktop */}
           <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-7 gap-6 items-start">
             {/* Quick Nav links */}
             <div className="md:col-span-3 space-y-3">
-              <h5 className="text-[#5DCAA5] text-xs font-bold uppercase tracking-wider">NAVIGASI CAMPAIGN</h5>
+              <h5 className="text-[#5DCAA5] text-xs font-bold uppercase tracking-wider">NAVIGASI</h5>
               <ul className="space-y-2 text-sm text-white/75">
                 <li>
-                  <a href="#profil" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <a href="/#profil" className="hover:text-white transition-colors flex items-center gap-1.5">
                     &rsaquo; Profil Singkat
                   </a>
                 </li>
                 <li>
-                  <a href="#visi" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <a href="/#visi" className="hover:text-white transition-colors flex items-center gap-1.5">
                     &rsaquo; Visi Misi Desa
                   </a>
                 </li>
                 <li>
-                  <a href="#program" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <Link href="/program" className="hover:text-white transition-colors flex items-center gap-1.5">
                     &rsaquo; 8 Program Kerja
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#aspirasi" className="hover:text-white transition-colors flex items-center gap-1.5">
-                    &rsaquo; Kirim Aspirasi Warga
+                  <Link href="/loker" className="hover:text-white transition-colors flex items-center gap-1.5">
+                    &rsaquo; Info Lowongan Kerja
+                  </Link>
+                </li>
+                <li>
+                  <a href="/#aspirasi" className="hover:text-white transition-colors flex items-center gap-1.5">
+                    &rsaquo; Formulir Pelayanan
                   </a>
                 </li>
               </ul>
@@ -137,7 +140,7 @@ export default function FooterSection() {
 
             {/* Alamat Sekretariat & Kontak */}
             <div className="md:col-span-4 space-y-3">
-              <h5 className="text-[#5DCAA5] text-xs font-bold uppercase tracking-wider">POSKO PEMENANGAN</h5>
+              <h5 className="text-[#5DCAA5] text-xs font-bold uppercase tracking-wider">ALAMAT</h5>
               <div className="space-y-2 text-sm text-white/75">
                 <p className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 text-[#5DCAA5] shrink-0 mt-0.5" />
@@ -152,7 +155,7 @@ export default function FooterSection() {
         {/* Divider line */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/55">
           <p>
-            &copy; 2026 Kampanye Anton Suryana. Seluruh Hak Cipta Dilindungi Undang-Undang.
+            &copy; 2026 Anton Suryana. Seluruh Hak Cipta Dilindungi Undang-Undang.
           </p>
 
           <button

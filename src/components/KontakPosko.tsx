@@ -6,14 +6,14 @@ export default function KontakPosko() {
       id: 1,
       label: "Instagram Anton",
       value: "@anton.suryana",
-      description: "Kirim pesan langsung untuk informasi kampanye dan jadwal silaturahmi",
+      description: "Kirim pesan langsung untuk informasi kegiatan dan layanan desa",
       icon: (className: string) => <Instagram className={`${className} text-[#D9487D]`} />,
       actionLabel: "DM Instagram",
       actionUrl: "https://ig.me/m/anton.suryana"
     },
     {
       id: 2,
-      label: "Posko Kampanye",
+      label: "Kantor Desa Cibening",
       value: "Desa Cibening, Kec. Setu",
       description: "Kec. Setu, Kab. Bekasi, Jawa Barat",
       icon: (className: string) => <MapPinned className={`${className} text-[#0F4C81]`} />,
@@ -22,9 +22,9 @@ export default function KontakPosko() {
     },
     {
       id: 3,
-      label: "Jam Silaturahmi",
+      label: "Jam Pelayanan",
       value: "Setiap Hari, 08.00 AM - 11.00 PM",
-      description: "Pintu posko selalu terbuka untuk berdiskusi langsung",
+      description: "Pintu selalu terbuka bagi warga yang ingin berdiskusi langsung",
       icon: (className: string) => <Clock className={`${className} text-[#1E88A8]`} />,
       actionLabel: "DM untuk Jadwal",
       actionUrl: "https://ig.me/m/anton.suryana"
@@ -33,7 +33,7 @@ export default function KontakPosko() {
 
   return (
     <div id="kontak" className="relative overflow-hidden space-y-6">
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <img
           src="/assets/content/images/ornament_2.webp"
           alt=""
@@ -54,9 +54,9 @@ export default function KontakPosko() {
 
       <div className="relative z-10 text-center md:text-left">
         <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">LAYANAN INFORMASI</span>
-        <h3 className="text-2xl md:text-3xl font-extrabold text-[#17202A] mt-1">Kontak &amp; Posko Silaturahmi</h3>
+        <h3 className="text-2xl md:text-3xl font-extrabold text-[#17202A] mt-1">Kontak &amp; Lokasi</h3>
         <p className="text-[#5B6470] text-sm md:text-base mt-2 max-w-2xl">
-          Tertarik berkontribusi atau berdiskusi langsung dengan kandidat? Silakan kunjungi Posko Pemenangan kami atau hubungi nomor di bawah.
+          Ingin berdiskusi atau menyampaikan kebutuhan warga? Silakan kunjungi kantor desa atau hubungi kanal di bawah ini.
         </p>
       </div>
 

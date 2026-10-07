@@ -10,7 +10,7 @@ export default function ProgramKerjaList() {
 
   return (
     <div id="program" className="relative overflow-hidden space-y-6">
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <img
           src="/assets/content/images/ornament_1.webp"
           alt=""
@@ -32,9 +32,9 @@ export default function ProgramKerjaList() {
       <div className="relative z-10 text-center md:text-left">
         <BrandLockup />
         <span className="text-[11px] font-bold uppercase tracking-widest text-[#0F4C81]">8 PROGRAM UNGGULAN</span>
-        <h3 className="text-2xl md:text-3xl font-extrabold text-[#17202A] mt-1">
+        <h1 className="text-2xl md:text-4xl font-extrabold text-[#17202A] mt-1 tracking-tight">
           Program Kerja Nyata untuk Cibening
-        </h3>
+        </h1>
         <p className="text-[#5B6470] mt-2 max-w-2xl text-sm md:text-base">
           Fokus utama untuk kemajuan seluruh dimensi kehidupan warga Desa Cibening, diwujudkan secara transparan, akuntabel, dan kolaboratif.
         </p>

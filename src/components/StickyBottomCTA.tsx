@@ -72,7 +72,12 @@ export default function StickyBottomCTA() {
 
   const scrollToAspirasi = () => {
     const target = document.getElementById("aspirasi");
-    if (!target) return;
+
+    // Di halaman selain beranda form aspirasi tidak ada, jadi arahkan ke beranda.
+    if (!target) {
+      window.location.href = "/#aspirasi";
+      return;
+    }
 
     const headerOffset = 80;
     const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
@@ -104,7 +109,7 @@ export default function StickyBottomCTA() {
         <span className="truncate">DM Instagram</span>
       </button>
 
-      {/* Kanan: tombol "Aspirasi" biru #0F4C81 */}
+      {/* Kanan: tombol "Pelayanan" biru #0F4C81 */}
       <button
         type="button"
         onPointerUp={() => runOnce(scrollToAspirasi)}
@@ -117,7 +122,7 @@ export default function StickyBottomCTA() {
         }}
       >
         <HeartHandshake className="w-4 h-4 shrink-0" />
-        <span className="truncate">Kirim Aspirasi</span>
+        <span className="truncate">Ajukan Pelayanan</span>
       </button>
     </div>
   );

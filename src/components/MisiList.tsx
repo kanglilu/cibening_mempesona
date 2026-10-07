@@ -4,9 +4,9 @@ import BrandLockup from "./BrandLockup";
 export default function MisiList() {
   return (
     <div id="misi" className="relative overflow-hidden space-y-6">
-      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
         <img
-          src="/assets/content/images/2.webp"
+          src="/assets/content/images/ornament_5.webp"
           alt=""
           className="absolute -right-28 top-10 w-[360px] opacity-10 select-none sm:-right-20 sm:top-4 sm:w-[430px] md:w-[520px]"
           loading="lazy"

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MapPin, ArrowRight, NotebookPen, Check, ChevronDown, Instagram, Facebook, Heart } from "lucide-react";
 
 export default function HeroSection() {
@@ -5,7 +6,7 @@ export default function HeroSection() {
     {
       id: "tentang",
       title: "PROFIL SINGKAT",
-      desc: "Sosok muda progresif, dekat dengan masyarakat, membawa visi transparansi dan keadilan sosial bagi seluruh warga Desa Cibening."
+      desc: "Sosok yang dekat dengan masyarakat, mengedepankan transparansi dan keadilan sosial bagi seluruh warga Desa Cibening."
     },
     {
       id: "program",
@@ -15,7 +16,7 @@ export default function HeroSection() {
     {
       id: "kontak-sosmed",
       title: "MEDIA SOSIAL",
-      desc: "Ikuti rekam jejak, transparansi kegiatan sosialisasi harian, serta ruang diskusi terbuka bersama tim Anton Suryana."
+      desc: "Ikuti rekam jejak, dokumentasi kegiatan harian, serta ruang diskusi terbuka bersama Anton Suryana."
     }
   ];
 
@@ -41,7 +42,7 @@ export default function HeroSection() {
 
             <div className="space-y-1.5">
               <span className="font-extrabold uppercase tracking-widest text-[#0F4C81] select-none block text-[8px] leading-[15.5px] sm:text-[11px] h-auto">
-                Calon Kepala Desa Cibening &bull; No. 2
+                Kepala Desa Cibening &bull; Kec. Setu
               </span>
 
               {/* Responsive main headline: avoids text-wrapping on short mobile width */}
@@ -66,20 +67,20 @@ export default function HeroSection() {
 
             {/* Compact side-by-side/stacked responsive CTAs */}
             <div className="flex flex-col sm:flex-row gap-2 pt-1">
-              <a
-                href="#program"
+              <Link
+                href="/program"
                 className="text-center bg-[#0F4C81] hover:bg-[#0F4C81]/90 text-white font-bold rounded-lg flex items-center justify-center gap-1 shadow-sm transition-all text-[11px] sm:text-xs w-[140px] sm:w-[150px] h-[36.5px] leading-[14.5px]"
               >
                 <span>Program Kerja</span>
                 <ArrowRight className="w-3 h-3" />
-              </a>
+              </Link>
 
               <a
                 href="#aspirasi"
                 className="text-center bg-white hover:bg-[#EAF6F0]/40 text-[#1F7A4D] border border-[#1F7A4D] font-bold rounded-lg flex items-center justify-center gap-1 transition-all text-[11px] sm:text-xs w-[140px] sm:w-[150px] h-[36.5px] leading-[14.5px]"
               >
                 <NotebookPen className="w-3 h-3" />
-                <span>Kirim Aspirasi</span>
+                <span>Ajukan Pelayanan</span>
               </a>
             </div>
 
@@ -121,15 +122,6 @@ export default function HeroSection() {
               />
             </div>
           </div>
-
-          <img
-            src="/assets/content/images/2.webp"
-            alt="Jangan lupa coblos nomor 2"
-            className="pointer-events-none absolute bottom-[76px] right-[12px] z-20 w-[180px] select-none sm:bottom-[86px] sm:right-[16px] sm:w-[168px] md:bottom-[102px] md:right-[24px] md:w-[196px]"
-            loading="eager"
-            decoding="async"
-            draggable={false}
-          />
 
         </div>
 
@@ -186,7 +178,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-1.5">
               <Heart className="w-4 h-4 text-rose-500 fill-rose-500 animate-pulse" />
               <span className="text-[10px] text-[#5B6470] font-bold uppercase tracking-wider">
-                TIM PEMENANGAN ANTON SURYANA
+                MELAYANI WARGA DESA CIBENING
               </span>
             </div>
           </div>

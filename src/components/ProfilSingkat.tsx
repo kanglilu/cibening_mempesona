@@ -23,7 +23,7 @@ const detailParagraphs = [
   "Rekam jejak Anton juga tumbuh dari dunia organisasi kepemudaan. Ia pernah menjabat sebagai Sekretaris Jenderal Karang Taruna tingkat Kecamatan selama 10 tahun, lalu dipercaya menjadi Bendahara Umum Karang Taruna Kabupaten Bekasi. Pengalaman ini membentuk ketelitian dalam tata kelola organisasi, administrasi, transparansi anggaran, dan kolaborasi lintas pihak.",
   "Di bidang pendidikan, Anton memiliki pengalaman sebagai pendidik di salah satu Madrasah Aliyah di Kabupaten Bekasi. Dari sana, ia memahami bahwa pembangunan desa tidak cukup hanya berbicara tentang infrastruktur, tetapi juga tentang karakter, pengetahuan, dan kualitas generasi muda.",
   "Dengan latar belakang pendidikan komputer, Anton turut menaruh perhatian pada teknologi dan inovasi. Baginya, teknologi dapat menjadi sarana untuk mempercepat pelayanan publik, memperkuat transparansi, dan membantu masyarakat menghadapi tantangan zaman.",
-  "Kini, menjelang Pemilihan Kepala Desa Cibening Tahun 2026, Anton Suryana hadir sebagai figur yang berpengalaman, dekat dengan warga, memahami kebutuhan desa, dan membawa komitmen untuk pelayanan yang lebih baik, pembangunan berkelanjutan, serta kehidupan masyarakat yang harmonis."
+  "Melalui Pemilihan Kepala Desa Cibening Tahun 2026, warga memberikan amanah kepada Anton Suryana untuk memimpin desa. Amanah itu kini dijalankan dengan komitmen pada pelayanan yang lebih baik, pembangunan yang berkelanjutan, serta kehidupan masyarakat yang harmonis."
 ];
 
 export default function ProfilSingkat() {
@@ -66,14 +66,16 @@ export default function ProfilSingkat() {
         {/* Floating title */}
         <div className="absolute left-5 right-4 bottom-5 text-left">
           <h4 className="text-lg font-bold text-white drop-shadow-md">Anton Suryana</h4>
-          <p className="text-xs text-white/90 font-medium mt-0.5 drop-shadow-md">No. 2 &bull; Calon Kepala Desa Cibening, Kec. Setu</p>
+          <p className="text-xs text-white/90 font-medium mt-0.5 drop-shadow-md">Kepala Desa Cibening, Kec. Setu</p>
         </div>
       </div>
 
       {/* Narrative Card Column */}
       <div className="md:col-span-7 flex flex-col justify-between bg-white border border-[#DDE5E1] p-6 md:p-8 rounded-xl relative overflow-hidden">
-        <div className="pointer-events-none absolute -right-20 top-0 h-56 w-56 rounded-full bg-[#EAF7FB] blur-3xl" />
-        <div className="pointer-events-none absolute -left-20 bottom-0 h-48 w-48 rounded-full bg-[#EAF6F0] blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -right-20 top-0 h-56 w-56 rounded-full bg-[#EAF7FB] blur-3xl" />
+          <div className="absolute -left-20 bottom-0 h-48 w-48 rounded-full bg-[#EAF6F0] blur-3xl" />
+        </div>
 
         <div className="space-y-4">
           <div className="relative z-10 flex items-center gap-2">

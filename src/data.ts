@@ -1,5 +1,5 @@
 /**
- * Data Campaign Anton Suryana - Calon Kepala Desa Cibening 2025
+ * Data konten website Anton Suryana - Kepala Desa Cibening
  */
 
 import { Zap, Eye, Construction, Store, Users, Leaf, MessageSquare } from "lucide-react";

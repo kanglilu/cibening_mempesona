@@ -1,19 +1,52 @@
 "use client";
 
 import { useState } from "react";
+import type { ReactNode } from "react";
+import Link from "next/link";
 import { Instagram, Menu, X } from "lucide-react";
 import BrandLockup from "./BrandLockup";
+
+/**
+ * Link ke anchor dipakai sebagai <a> biasa supaya lompat di dalam halaman,
+ * sedangkan link antar-route pakai <Link> supaya pindah halaman tanpa reload.
+ */
+function NavItem({
+  href,
+  className,
+  onClick,
+  children
+}: {
+  href: string;
+  className?: string;
+  onClick?: () => void;
+  children: ReactNode;
+}) {
+  if (href.includes("#")) {
+    return (
+      <a href={href} className={className} onClick={onClick}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
 
 export default function HeaderNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Profil", href: "#profil" },
-    { name: "Visi", href: "#visi" },
-    { name: "Misi", href: "#misi" },
-    { name: "Program", href: "#program" },
-    { name: "Aspirasi", href: "#aspirasi" },
-    { name: "Hubungi", href: "#kontak" }
+    { name: "Profil", href: "/#profil" },
+    { name: "Visi", href: "/#visi" },
+    { name: "Misi", href: "/#misi" },
+    { name: "Program", href: "/program" },
+    { name: "Loker", href: "/loker" },
+    { name: "Pelayanan", href: "/#aspirasi" },
+    { name: "Hubungi", href: "/#kontak" }
   ];
 
   const instagramDmUrl = "https://ig.me/m/anton.suryana";
@@ -23,20 +56,20 @@ export default function HeaderNavbar() {
       <div className="flex items-center justify-between h-full px-4 md:px-6 max-w-7xl mx-auto">
         
         {/* Left Side: Village Logo */}
-        <a href="#home" className="flex items-center gap-3 group">
-          <BrandLockup variant="header" showNumber={false} />
+        <a href="/#home" className="flex items-center gap-3 group">
+          <BrandLockup variant="header" />
         </a>
 
         {/* Center: Desktop Nav Links (hidden < 768px) */}
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
+            <NavItem
               key={link.name}
               href={link.href}
               className="text-[13px] font-bold text-[#5B6470] hover:text-[#0F4C81] transition-colors relative py-2"
             >
               {link.name}
-            </a>
+            </NavItem>
           ))}
         </nav>
 
@@ -82,21 +115,18 @@ export default function HeaderNavbar() {
         <div className="absolute top-16 left-0 w-full bg-white border-b border-[#DDE5E1] px-4 py-5 space-y-4 shadow-lg animate-fadeIn md:hidden">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
-              <a
+              <NavItem
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="text-sm font-bold text-[#17202A] hover:text-[#0F4C81] py-2 border-b border-[#DDE5E1]/40 last:border-0"
               >
                 {link.name}
-              </a>
+              </NavItem>
             ))}
           </div>
 
           <div className="pt-2 flex flex-col gap-2">
-            <div className="rounded-lg border border-[#1F7A4D]/25 bg-[#EAF6F0] px-3 py-2 text-center text-xs font-extrabold uppercase tracking-wide text-[#1F7A4D]">
-              No. 2
-            </div>
             <a
               href={instagramDmUrl}
               target="_blank"

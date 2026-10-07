@@ -7,6 +7,11 @@
     background: #EEF6F3;
   }
 
+  html {
+    /* Header sticky setinggi 4rem, beri sedikit jarak agar anchor tidak tertutup. */
+    scroll-padding-top: 4.75rem;
+  }
+
   body {
     margin: 0;
     padding: 0;

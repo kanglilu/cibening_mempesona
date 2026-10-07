@@ -4,15 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev -p 3000 -H 0.0.0.0",
+    "dev": "next dev -p 3100 -H 0.0.0.0",
     "build": "next build",
-    "start": "next start -p 3000 -H 0.0.0.0",
+    "start": "next start -p 3100 -H 0.0.0.0",
     "clean": "node -e \"const fs=require('fs'); for (const p of ['.next','out','dist','server.js']) fs.rmSync(p,{recursive:true,force:true});\"",
     "lint": "tsc --noEmit",
     "optimize:images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.3",
     "@tailwindcss/postcss": "^4.3.1",
     "@vercel/analytics": "^2.0.1",
     "dotenv": "^17.2.3",
